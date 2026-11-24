@@ -1,0 +1,41 @@
+name: Extraire le ZIP du site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'uploads/*.zip'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extraire les ZIP
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          for z in uploads/*.zip; do
+            tmp=$(mktemp -d)
+            unzip -q "$z" -d "$tmp"
+            src=$(find "$tmp" -mindepth 1 -maxdepth 1 -type d | head -n 1)
+            if [ -z "$src" ]; then src="$tmp"; fi
+            cp -a "$src"/. .
+            rm -f "$z"
+          done
+
+      - name: Vérifier le projet
+        run: test -f package.json && test -d app
+
+      - name: Enregistrer les changements
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Extraction du ZIP du site"
+          git push
