@@ -26,6 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr">
       <body>
+        <div className="bg-blobs" aria-hidden="true"><i /><i /><i /></div>
         <a href="#contenu" className="skip">Aller au contenu</a>
         <Header />
         <main id="contenu">{children}</main>

@@ -8,6 +8,8 @@ import { Reveal } from '@/components/Reveal';
 import { Icon } from '@/components/Icon';
 import { Ecg } from '@/components/Ecg';
 import { siteConfig } from '@/lib/config';
+import { Logo } from '@/components/Logo';
+import { company } from '@/lib/socials';
 
 export default function Home() {
   return (
@@ -16,7 +18,7 @@ export default function Home() {
       <section className="hero">
         <div className="container hero-grid">
           <Reveal>
-            <span className="eyebrow"><Icon name="bell" size={16} /> Application Android · gratuite</span>
+            <span className="eyebrow"><Icon name="bell" size={16} /> Un produit Mayelia · Android gratuit</span>
             <h1>Ne ratez plus <span>aucune prise</span> de médicament.</h1>
             <p className="lead">
               Medi Reminder fait sonner une vraie alarme à l&apos;heure de chaque traitement, même téléphone verrouillé et sans Internet.
@@ -173,6 +175,52 @@ export default function Home() {
             <h2>Vous vous posez sûrement ces questions.</h2>
           </Reveal>
           <Reveal><Faq /></Reveal>
+        </div>
+      </section>
+
+      {/* ---------- MAYELIA ---------- */}
+      <section className="sec" id="mayelia">
+        <div className="container">
+          <Reveal className="sec-head">
+            <span className="kicker">Mayelia</span>
+            <h2>Une bibliothèque d&apos;applications utiles, simples et soignées.</h2>
+            <p>Mayelia conçoit une vingtaine d&apos;applications, publiées ensemble comme une même bibliothèque. Medi Reminder en est le premier produit.</p>
+          </Reveal>
+          <div className="lib">
+            <Reveal>
+              <div className="lib-card">
+                <div className="lib-logo"><Logo size={64} /></div>
+                <h3>Medi Reminder</h3>
+                <p>Rappels de médicaments avec alarme. Cette application.</p>
+                <span className="lib-tag">Disponible</span>
+              </div>
+            </Reveal>
+            <Reveal delay={120}>
+              <div className="lib-card">
+                <div className="lib-logo"><img src="/brand/statuscraft.png" alt="Logo STATUSCRAFT" width={64} height={64} /></div>
+                <h3>STATUSCRAFT</h3>
+                <p>Creative Status Studio · Un produit Mayelia.</p>
+                <span className="lib-tag">Version 1.0.0</span>
+              </div>
+            </Reveal>
+            <Reveal delay={240}>
+              <div className="lib-card lib-card-soon">
+                <div className="lib-logo"><img src="/brand/mayelia.png" alt="Logo Mayelia" width={64} height={64} /></div>
+                <h3>Et bien d&apos;autres</h3>
+                <p>Une vingtaine d&apos;applications prévues, publiées sous la marque Mayelia.</p>
+                <span className="lib-tag">À venir</span>
+              </div>
+            </Reveal>
+          </div>
+          <Reveal>
+            <div className="dev-card">
+              <div className="dev-avatar">B</div>
+              <div>
+                <b>{company.developer}</b>
+                <small>{company.tag} · Créateur de Mayelia · Développeur</small>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 

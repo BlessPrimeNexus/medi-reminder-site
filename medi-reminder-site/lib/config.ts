@@ -2,7 +2,7 @@ export const siteConfig = {
   name: 'Medi Reminder',
   tagline: 'Votre médicament, à la bonne heure. Chaque jour.',
   description:
-    "Medi Reminder est une application Android qui fait sonner une vraie alarme à l'heure de chaque médicament, même téléphone verrouillé et sans Internet. En français, sans compte, pensée pour la vie quotidienne en RDC.",
+    "Medi Reminder, un produit Mayelia, est une application Android qui fait sonner une vraie alarme à l'heure de chaque médicament, même téléphone verrouillé et sans Internet. En français, sans compte, pensée pour la vie quotidienne en RDC.",
   version: process.env.APK_VERSION ?? '0.2.0',
   sha256: process.env.APK_SHA256 ?? '',
   apkPath: '/downloads/MediReminder.apk',
