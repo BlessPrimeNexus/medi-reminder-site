@@ -1,0 +1,3 @@
+Déposez ici le fichier de l'application sous le nom exact : MediReminder.apk
+(ou définissez la variable d'environnement APK_URL vers un lien direct, par exemple une « Release » GitHub).
+Le site détecte automatiquement le fichier et active le bouton de téléchargement.
