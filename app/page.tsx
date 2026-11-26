@@ -214,7 +214,7 @@ export default function Home() {
           </div>
           <Reveal>
             <div className="dev-card">
-              <div className="dev-avatar">B</div>
+              <img className="dev-avatar" src="/brand/developer.jpg" alt={company.developer} width={56} height={56} />
               <div>
                 <b>{company.developer}</b>
                 <small>{company.tag} · Créateur de Mayelia · Développeur</small>

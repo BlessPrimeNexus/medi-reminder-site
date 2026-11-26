@@ -28,3 +28,12 @@ Le site détecte le fichier : si absent, le bouton affiche « Bientôt disponibl
 - Le chiffre de l'OMS (50 % d'adhésion) est cité avec sa source ; le confirmer avant de l'imprimer.
 - Le QR code et les liens partagés pointent vers le domaine réel une fois déployé.
 - Tester le téléchargement sur un vrai téléphone Android (Chrome et Samsung Internet).
+
+## Assistant IA (route /api/assistant)
+Le site héberge le relais de l'assistant de l'application. Variables à ajouter dans Vercel (Settings > Environment Variables) :
+- `AI_API_KEY` : clé du fournisseur (ne jamais la mettre dans le code ni dans l'application)
+- `AI_PROVIDER` : `openai` (Gemini, Groq, OpenRouter…) ou `anthropic` (Claude)
+- `AI_BASE_URL` et `AI_MODEL` : selon le fournisseur (ex. `https://generativelanguage.googleapis.com/v1beta/openai/` et `gemini-2.5-flash`)
+- `APP_TOKEN` : jeton partagé avec l'application (facultatif)
+
+Après modification des variables, faites un Redeploy.
